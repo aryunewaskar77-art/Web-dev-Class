@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 30px;
+        }
+        .head{
+            color: rebeccapurple;
+            font-size: 60px;
+            font-weight: 600;
+        }
+        .para{
+            text-align: center;
+        }
+        .box{
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+            background-color: #bc90e2;
+            border: 3px solid rebeccapurple;
+        }
+        .inner{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 50px;
+            
+        }
+        #btn{
+            background-color: rebeccapurple;
+            color: whitesmoke;
+            border-radius: 25px;
+        }
+       .outer{
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 3px solid rebeccapurple;
+        border-radius: 25px;
+        background-color: antiquewhite;
+       }
+       .line{
+        height: 1px;
+        width: 800px;
+        border: 1px solid black;
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="outer">
+    <header class="head">Admission And Fees</header>
+    <div class="line"></div>
+    <br>
+    <br>
+    <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <br>
+    <br>
+    <div class="box">
+        <div class="inner">
+            <h1 class="text">
+                Apply Now for <span id="prompt" class="prompt">2025</span> Admission
+            </h1>
+            <button id="btn">Apply Now</button>
+        </div>
+        <br>
+        <br>
+        <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+    </div>
+    </div>
+    <script>
+        document.getElementById("btn").addEventListener("click",()=>{
+            let para = document.querySelectorAll("p");
+            for(let i=0;i<para.length;i++){
+            if(para[i].style.display==="none"){
+                para[i].style.display="";
+            }
+            else{
+                para[i].style.display="none";
+            }
+        }
+        
+        });
+
+    </script>
+</body>
+</html>
