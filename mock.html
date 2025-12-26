@@ -82,16 +82,17 @@
     </div>
     <script>
         document.getElementById("btn").addEventListener("click",()=>{
-            let para = document.querySelectorAll("p");
-            for(let i=0;i<para.length;i++){
-            if(para[i].style.display==="none"){
-                para[i].style.display="";
-            }
-            else{
-                para[i].style.display="none";
-            }
-        }
-        
+            // let para = document.querySelectorAll("p");
+            // for(let i=0;i<para.length;i++){
+            // if(para[i].style.display==="none"){
+            //     para[i].style.display="";
+            // }
+            // else{
+            //     para[i].style.display="none";
+            // }
+            let p =document.getElementsByClassName("prompt");
+            let text =prompt("enter text");
+            p[0].innerText=text;
         });
 
     </script>
