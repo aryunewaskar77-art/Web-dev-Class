@@ -1,4 +1,11 @@
 let btn = document.getElementById("btn");
+let City = document.getElementById("place");
+let Country = document.getElementById("country");
+let time = document.getElementById("time");
+let day = document.getElementById("day");
+let date = document.getElementById("date");
+let weather = document.getElementById("weather");
+let icon = document.getElementById("icon");
 
 btn.addEventListener("click", () => {
     const inputValue = document.getElementById("input");
@@ -13,13 +20,19 @@ btn.addEventListener("click", () => {
         })
         .then(data => {
             console.log(data);
-
-            const weatherBox = document.querySelector(".weatherBox");
-            weatherBox.innerHTML = `
-                <div class="location">${data.name}, ${data.sys.country}</div>
-                <div class="temp">${Math.round(data.main.temp)}°C</div>
-                <div class="condition">${data.weather[0].description}</div>
-            `;
+            City.innerText = data.location.name + ", ";
+            Country.innerText = data.location.country;
+            time.innerText = data.location.localtime.split(" ")[1];
+            date.innerText = data.location.localtime.split(" ")[0];
+            weather.innerText = data.current.condition.text;
+            if(weather.innerText==="Sunny"){
+                icon.value = "☀️";
+            }
+            else if(weather.innerText==="Partly cloudy"){
+                icon.value = "🌤️";
+            } else if(weather.innerText==="Rainy"){
+                icon.value = "🌧️";
+            }
 
             inputValue.value = "";
         })
