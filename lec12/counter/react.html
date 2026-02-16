@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>React Click Game</title>
+    <style>
+      body {
+        margin: 0px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+      }
+
+      .btn {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Counter() {
+        const [score, setScore] = React.useState(0);
+
+        return (
+          <div style={{ textAlign: "center" }}>
+            <h1>Counter App</h1>
+            <h1>{score}</h1>
+
+            <div className="btn">
+              <button onClick={() => setScore(score + 1)}>+</button>
+              <button onClick={() => setScore(0)}>reset</button>
+              <button onClick={() => setScore(score - 1)}>-</button>
+            </div>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<Counter />, document.getElementById("root")); 
+    </script>
+  </body>
+</html>
